@@ -99,12 +99,17 @@ class YOLO(object):
         self.input_image_shape = K.placeholder(shape=(2, ))
         #if gpu_num>=2:
         #    self.yolo_model = multi_gpu_model(self.yolo_model, gpus=gpu_num)
+        print("===============================")
+        print("self.yolo_model.output :\n", self.yolo_model.output)
+        # [<tf.Tensor 'conv2d_10/BiasAdd:0' shape=(?, ?, ?, 24) dtype=float32>, <tf.Tensor 'conv2d_13/BiasAdd:0' shape=(?, ?, ?, 24) dtype=float32>]
+        print("===============================")
         boxes, scores, classes = yolo_eval(self.yolo_model.output, self.anchors,
                 len(self.class_names), self.input_image_shape,
                 score_threshold=self.score, iou_threshold=self.iou)
         return boxes, scores, classes
 
     def detect_image(self, image):
+        # image : RGB
         start = timer()
         if self.model_image_size != (None, None):
             assert self.model_image_size[0]%32 == 0, 'Multiples of 32 required'
