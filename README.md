@@ -71,7 +71,8 @@ catkin build
  
 ## TODO
 - [x] Communicate between raspberry pi 0 w and server
-- [ ] Send image captured by raspberry pi camera to server
+- [x] Send image captured by raspberry pi camera to server
 - [ ] Control the codrone2 by server
 - [ ] Detect the object(room number)
 - [ ] Get the location value of the object(room number)
+- [ ] Lane Tracking
