@@ -15,7 +15,7 @@ Create a drone that recognizes the room number and goes to the room of your choi
 ![drone_flying](./images/flying.gif) ![curve_detection](./images/curve_detection.gif)
 
 ## ROS Package
-![rqt_graph](./rqt_graph.png)
+![rqt_graph](./images/rqt_graph.png)
 
 ## Special Things by [정은수](github.com/BinCHip)
 `CoDrone-daechul/src/codrone_move/scripts/e_drone`  
