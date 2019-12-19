@@ -6,7 +6,7 @@ import time
 lane_img = cv2.imread("./imgs/lane_test.jpeg", cv2.IMREAD_COLOR)
 gray = cv2.cvtColor(lane_img, cv2.COLOR_BGR2GRAY)
 
-canny = cv2.Canny(gray,150,300,apertureSize=3)
+canny = cv2.Canny(gray, 150, 300, apertureSize=3)
 
 canny_img = np.copy(canny)
 height = canny_img.shape[0]
@@ -32,7 +32,7 @@ for i in range(len(strengthen_img)):
     lcur = crop_width // 2 - (crop_width // 4)
     rcur = crop_width // 2 + (crop_width // 4)
 
-    while(strengthen_img[i][lcur] == 0 and strengthen_img[i][rcur] == 0):
+    while(strengthen_img[i][lcur] == 0 or strengthen_img[i][rcur] == 0):
         if strengthen_img[i][lcur] == 0:
             lcur -= 1
         if strengthen_img[i][rcur] == 0:
