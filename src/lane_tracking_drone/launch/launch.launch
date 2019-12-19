@@ -1,0 +1,5 @@
+<launch>
+    <master auto="start"/>
+    <node name="detector" pkg="lane_tracking_drone" type="lane_track.py" respawn="false"/>
+    <node name="video_capture" pkg="lane_tracking_drone" type="video_capture.py" respawn="false"/>
+</launch>
